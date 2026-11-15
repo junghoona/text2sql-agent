@@ -7,13 +7,13 @@ def main() -> None:
     messages: list = []
     while True:
         try:
-            q = input("\nyou> ").strip()
+            query = input("\nyou> ").strip()
         except (EOFError, KeyboardInterrupt):
             break
-        if q.lower() in {"exit", "quit"}:
+        if query.lower() in {"exit", "quit"}:
             break
-        if q:
-            messages.append({"role": "user", "content": q})
+        if query:
+            messages.append({"role": "user", "content": query})
             print(f"\nagent> {ask(messages)}")
 
 
