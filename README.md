@@ -39,5 +39,3 @@ and the connection opens with `mode=ro`, so SQLite refuses writes even if the gu
 - [ ] **Sun AM:** Streamlit UI: show the SQL and results as a table, not just the answer
 - [ ] Add tests for any new guard rules
 - [ ] **Stretch:** Connect `mcp_server.py` to Claude Desktop / Claude Code
-- [ ] Record a demo GIF and write the resume line:
-      *"Built an NL-to-SQL agent that queries 500K+ rows via conversational interface"*
