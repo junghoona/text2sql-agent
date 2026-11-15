@@ -17,8 +17,8 @@ def connect(path: str = DB_PATH) -> sqlite3.Connection:
 def get_schema(path: str = DB_PATH) -> str:
     """Return CREATE TABLE statements plus row counts, for the LLM's context."""
     with connect(path) as conn:
-        q = "SELECT name, sql FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
-        rows = conn.execute(q).fetchall()
+        query = "SELECT name, sql FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
+        rows = conn.execute(query).fetchall()
         parts = []
         for name, sql in rows:
             count = conn.execute(f'SELECT COUNT(*) FROM "{name}"').fetchone()[0]
